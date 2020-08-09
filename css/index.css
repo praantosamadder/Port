@@ -1,0 +1,34 @@
+body {
+    background-color: black;
+}
+
+.main-txt {
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: -1.1px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+
+.blink {
+    -webkit-animation: blink 1s step-end infinite;
+    -moz-animation: blink 1s step-end infinite;
+    -o-animation: blink 1s step-end infinite;
+    animation: blink 1s step-end infinite;
+  }
+  
+  @-webkit-keyframes blink {
+    67% { opacity: 0 }
+  }
+  
+  @-moz-keyframes blink {
+    67% { opacity: 0 }
+  }
+  
+  @-o-keyframes blink {
+    67% { opacity: 0 }
+  }
+  
+  @keyframes blink {
+    67% { opacity: 0 }
+  }
