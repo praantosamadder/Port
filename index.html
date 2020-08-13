@@ -1,21 +1,67 @@
+<!--
+    This code is completely breakable because I took no steps no make sure not to. This was a fun project for a portfolio
+    website, for which the design came straight from my mind. This is of course a fake command-line and hence doesn't do
+    much. All the commands are fake and don't have any actual processing done behind the scenes. The network delays are
+    simulated with JS
+-->
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <script src="node_modules/xterm/lib/xterm.js"></script>
+        <script src="js/main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.js"></script>
         <link rel="stylesheet" href="css/index.css">
-        <title>
-            port
-        </title>
+        <link rel="stylesheet" href="node_modules/xterm/css/xterm.css">
+        <title>port</title>
     </head>
 
     <body>
-        <div class="main-txt">
-            
-            github.io >
-            <span class="blink">_</span>
 
-        </div>
+    <div id="terminal">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-        <script src="js/main.js"></script>
+    </div>
+
+    <script>
+
+        let term = new Terminal({
+            cursorBlink: "block"
+        });
+
+        function breakPrompt(terminal){
+            terminal.write("\r\ngithub.io > ")
+        }
+
+        function passValue(e) {
+            alert(e + "Hello")
+        }
+
+        term.open(document.getElementById('terminal'));
+        term.writeln("If you don't know what you're doing, then use port --help")
+        breakPrompt(term)
+
+        // OPERATIONS
+        term.onData(e => {
+            switch (e) {
+                case '\u0003': {
+                    breakPrompt(term);
+                    break;
+                }
+
+                case '\u007F': {
+                    if (term._core.buffer.x > 13){
+                        term.write("\b \b")
+                    }
+                    break;
+                }
+                case '\r': {
+                    passValue(e)
+                    break;
+                } default: term.write(e)
+            }
+        })
+
+    </script>
     </body>
 </html>
