@@ -1,16 +1,12 @@
+/* TAGS */
 body {
     background-color: black;
 }
 
-#main-txt {
-    font-family: 'Courier New', Courier, monospace;
-    letter-spacing: -1.1px;
-    background-color: black;
-    color: white;
-    font-size: 20px;
-}
-
+/* CLASSES */
 .blink {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
     -webkit-animation: blink 1s step-end infinite;
     -moz-animation: blink 1s step-end infinite;
     -o-animation: blink 1s step-end infinite;
@@ -33,36 +29,45 @@ body {
     67% { opacity: 0 }
   }
 
-.arg-text{
-    background-color: black;
-    color: white;
-    border-color: black;
-    border-radius: 0;
-    /*width: 90%;*/
-    alignment: top;
-    font-family: 'Courier New', Courier, monospace;
-    letter-spacing: -1.1px;
-    font-size: 20px;
-}
-
-/*input:focus{*/
-/*  outline: none;*/
-/*}*/
-
-#github{
-    display: inline;
-}
-
 .btn{
     border-radius: 32px;
     border-width: 0;
     padding: 5px 20px;
 }
 
-.terminal {
+/* IDs */
+
+#terminal-full-screen {
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
-    width: 100%;
-    height: 100%;
+}
+
+#terminal-input {
+    font-size: 15px;
+    width: 90%;
+    border-color: transparent;
+    background-color: white;
+    bottom: 0;
+    padding-left: 0;
+    top: initial;
+    color: black;
+    caret-color: white;
+    caret-shape: underscore;
+    font-family: 'Courier New', Courier, monospace;
+    outline: none;
+}
+
+#terminal-output {
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    display: inline;
+}
+
+#dolla-sign {
+    color: white;
+    display: inline;
+    font-family: 'Courier New', Courier, monospace;
 }
