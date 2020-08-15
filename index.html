@@ -22,13 +22,18 @@
     </head>
 
     <body>
-    <div id="terminal-full-screen">
-        <div id="terminal-line-one">
-            <p id="dolla-sign">$</p>
-            <p id="terminal-output"></p>
-            <input type="text" id="terminal-input" onfocusout="terminalInputFocusOut()" autofocus>
-        </div>
+    <div id="terminal-intro">
+        <p class="terminal-intro-text">
+            Microsoft Windows [Version 10.0.18363.1016]<br>
+            (c) 2019 Microsoft Corporation. All rights reserved.
+
+        </p>
     </div>
+    <div id="terminal-line" style="display: inline">
+<!--        <p id="dolla-sign" class="dolla-sign">praantosamadder.github.io <b>$</b></p>-->
+<!--        <p id="terminal-output" class="terminal-output"></p>-->
+    </div>
+    <input type="text" id="terminal-input" class="terminal-input" onfocusout="returnFocusToTerminalInput()" autofocus>
 
     <script src="js/terminal.js"></script>
     <link rel="stylesheet" href="css/index.css">
